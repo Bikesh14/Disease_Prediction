@@ -1,13 +1,8 @@
 import pickle
 
 loaded_model = pickle.load(open('modelDisease.pkl', 'rb'))
-filename = 'modelDisease.pkl'
-# pickle.dump(model_dtc, open(filename, 'wb'))
 
 import pandas as pd 
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import accuracy_score
 
 # train = pd.read_csv("Training.csv")
 # test = pd.read_csv("Testing.csv")
