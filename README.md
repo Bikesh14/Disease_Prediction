@@ -1,4 +1,4 @@
 # Disease_Prediction
 
-# run fask server:
+# Run flask server:
 Flask run
