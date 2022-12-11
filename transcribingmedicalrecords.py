@@ -273,5 +273,6 @@ def summarizer(transcription):
     print('Input: '+ transcription)
     prediction_row = model.predict([transcription])
     print('Output: '+prediction_row[0])
+    return prediction_row
 
 
