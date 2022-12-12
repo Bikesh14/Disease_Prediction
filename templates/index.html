@@ -22,10 +22,10 @@
       <a class="navbar-brand" href="#" style="font-size: 28px; font-weight: bold;">web<span style="color: coral; font-weight: normal;">doctor</span></a>
       <ul class="navbar-nav" style="display: flex !important; flex-direction: row;">
         <li class="nav-item">
-          <a class="nav-link mr-3" href="#" style="font-size: 18px;">Predict</a>
+          <a class="nav-link mr-2" href="{{ url_for('index') }}">Predict</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="summarizer.html" style="font-size: 18px;">Summary</a>
+          <a class="nav-link" href="{{ url_for('transcribe') }}">Summary</a>
         </li>
       </ul>
     </div>
@@ -34,37 +34,68 @@
     <form action="" method="POST">
       <div class="row mb-2">
         <div class="form-group col-md-4">
-          <h5>Symptom 1</h5>
-          <input type="text" class="form-control" name="symptom1" placeholder="Enter Symptom 1">
+          <h5>Symptom 1<h5>
+          <input type="text"class="form-control" name="symptom1" placeholder="Enter Symptom 1">
+          {% if symptom1 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom1}}</small>
+            {% endif %}
+
         </div>
+        
         <div class="form-group col-md-4">
-          <h5>Symptom 2</h5>
+          <h5>Symptom 2<h5>
           <input type="text" class="form-control" name="symptom2" placeholder="Enter Symptom 2">
+          {% if symptom2 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom2}}</small>
+            {% endif %}
+
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 3</h5>
           <input type="text" class="form-control" name="symptom3" placeholder="Enter Symptom 3">
+          {% if symptom3 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom3}}</small>
+            {% endif %}
+
         </div>
       </div>
       <div class="row mb-2">
         <div class="form-group col-md-4">
           <h5>Symptom 4</h5>
           <input type="text" class="form-control" name="symptom4" placeholder="Enter Symptom 4">
+          {% if symptom4 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom4}}</small>
+            {% endif %}
+
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 5</h5>
           <input type="text" class="form-control" name="symptom5" placeholder="Enter Symptom 5">
+          {% if symptom5 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom5}}</small>
+            {% endif %}
+
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 6</h5>
           <input type="text" class="form-control" name="symptom6" placeholder="Enter Symptom 6">
+          {% if symptom6 %}
+          <small class="form-text text-muted">            
+            Your input: {{symptom6}}</small>
+            {% endif %}
+
         </div>
       </div>
       <input type="submit" class="btn btn-success" value="Predict my disease">
     </form>
 
     <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
-      <h1 class="display-5" style="color: #444">Hello, you might have <span style="color: coral;">AIDS</span></h1>
+      <h1 class="display-5" style="color: #444">Hello, you might have <span style="color: coral;">{{prediction}}</span></h1>
       <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rem ullam temporibus voluptate tenetur ea quas! Architecto animi molestias sint voluptates sunt voluptatibus delectus! Autem neque magnam quos possimus voluptates.</p>
       <hr class="my-4">
       <h4 style="color: #444">Initial Prescription</h4>
