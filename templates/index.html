@@ -19,50 +19,68 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">web<span style="color: coral">doctor</span></a>
-      <ul class="navbar-nav">
+      <a class="navbar-brand" href="#" style="font-size: 28px; font-weight: bold;">web<span style="color: coral; font-weight: normal;">doctor</span></a>
+      <ul class="navbar-nav" style="display: flex !important; flex-direction: row;">
         <li class="nav-item">
-          <a class="nav-link" href="#">Predict</a>
+          <a class="nav-link mr-3" href="#" style="font-size: 18px;">Predict</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="summarizer.html">Summary</a>
+          <a class="nav-link" href="summarizer.html" style="font-size: 18px;">Summary</a>
         </li>
       </ul>
     </div>
   </nav>
-  <div class="container" style="padding-top: 150px">
+  <div class="container" style="padding-top: 100px">
     <form action="" method="POST">
-      <div class="row mb-4">
-        <div class="form-group col">
-          <h5>Symptom 1<h5>
+      <div class="row mb-2">
+        <div class="form-group col-md-4">
+          <h5>Symptom 1</h5>
           <input type="text" class="form-control" name="symptom1" placeholder="Enter Symptom 1">
         </div>
-        <div class="form-group col">
-          <h5>Symptom 2<h5>
+        <div class="form-group col-md-4">
+          <h5>Symptom 2</h5>
           <input type="text" class="form-control" name="symptom2" placeholder="Enter Symptom 2">
         </div>
-        <div class="form-group col">
-          <h5>Symptom 3<h5>
+        <div class="form-group col-md-4">
+          <h5>Symptom 3</h5>
           <input type="text" class="form-control" name="symptom3" placeholder="Enter Symptom 3">
         </div>
       </div>
-      <div class="row mb-4">
-        <div class="form-group col">
-          <h5>Symptom 4<h5>
+      <div class="row mb-2">
+        <div class="form-group col-md-4">
+          <h5>Symptom 4</h5>
           <input type="text" class="form-control" name="symptom4" placeholder="Enter Symptom 4">
         </div>
-        <div class="form-group col">
-          <h5>Symptom 5<h5>
+        <div class="form-group col-md-4">
+          <h5>Symptom 5</h5>
           <input type="text" class="form-control" name="symptom5" placeholder="Enter Symptom 5">
         </div>
-        <div class="form-group col">
-          <h5>Symptom 6<h5>
+        <div class="form-group col-md-4">
+          <h5>Symptom 6</h5>
           <input type="text" class="form-control" name="symptom6" placeholder="Enter Symptom 6">
         </div>
       </div>
       <input type="submit" class="btn btn-success" value="Predict my disease">
     </form>
+
+    <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
+      <h1 class="display-5" style="color: #444">Hello, you might have <span style="color: coral;">AIDS</span></h1>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rem ullam temporibus voluptate tenetur ea quas! Architecto animi molestias sint voluptates sunt voluptatibus delectus! Autem neque magnam quos possimus voluptates.</p>
+      <hr class="my-4">
+      <h4 style="color: #444">Initial Prescription</h4>
+      <p class="lead" style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero officia, laborum optio expedita voluptate id quod temporibus nesciunt eveniet assumenda. Rem ducimus recusandae corporis vero voluptatem incidunt quae! Reiciendis, blanditiis.</p>
+    </div>
+
+    <div class="alert alert-warning" role="alert">
+      This is not a real prescription! Please visit your doctor.
+    </div>
   </div>
+  <footer class="pt-5 pb-3">
+    <div class="container" style="text-align: center;">
+      Copyright &copy; webdoctor, 2022
+    </div>
+  </footer>
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

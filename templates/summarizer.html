@@ -15,19 +15,26 @@
     h5 {
       padding-bottom: 10px;
     }
+    li {
+      padding-left: 0;
+      list-style: none;
+    }
+    ul {
+      padding: 0;
+    }
   </style>
 </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-      <a class="navbar-brand" href="#">web<span style="color: coral">doctor</span></a>
-      <ul class="navbar-nav">
+      <a class="navbar-brand" href="index.html" style="font-size: 28px; font-weight: bold;">web<span style="color: coral; font-weight: normal;">doctor</span></a>
+      <ul class="navbar-nav" style="display: flex !important; flex-direction: row;">
         <li class="nav-item">
-          <a class="nav-link" href="index.html">Predict</a>
+          <a class="nav-link mr-3" href="index.html" style="font-size: 18px;">Predict</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Summary</a>
+          <a class="nav-link" href="#" style="font-size: 18px;">Summary</a>
         </li>
       </ul>
     </div>
@@ -35,7 +42,7 @@
 
   <div class="container">
     <form action="" method="POST">
-      <div class="form-group" style="margin-top: 150px">
+      <div class="form-group" style="margin-top: 100px">
         <h5>Medical Transcription<h5>
         <textarea placeholder="Enter Transcription" class="form-control" id="transcription" name="transcription" rows="8"
           style="font-size: 18px"></textarea>
@@ -43,11 +50,29 @@
       </div>
       <input type="submit" class="btn btn-success my-4" value="Summarise" />
     </form>
-    <h5>Symptoms and Key points</h5>
-    <p>
-
-    </p>
+    <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
+      <h1 class="display-5 mb-4" style="color: #444">Symptoms and <span style="color: coral;">Keypoints</span></h1>
+      <ul style="font-size: 20px;">
+        <div class="row">
+          <div class="col-md-4">
+            <li>Lorem, ipsum dolor</li>
+          </div>
+          <div class="col-md-4">
+            <li>Lorem, ipsum dolor</li>
+          </div>
+          <div class="col-md-4">
+            <li>Lorem, ipsum dolor</li>
+          </div>
+        </div>
+      </ul>
+    </div>
   </div>
+
+  <footer class="pt-5 pb-3">
+    <div class="container" style="text-align: center;">
+      Copyright &copy; webdoctor, 2022
+    </div>
+  </footer>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
