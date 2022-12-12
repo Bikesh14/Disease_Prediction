@@ -94,15 +94,17 @@
     </form>
 
     <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
-      <h1 class="display-5" style="color: #444">Hello, you might have <span style="color: coral;">{{prediction}}</span></h1>
-      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rem ullam temporibus voluptate tenetur ea quas! Architecto animi molestias sint voluptates sunt voluptatibus delectus! Autem neque magnam quos possimus voluptates.</p>
+      <h1 class="display-5" style="color: #444">Hello, <br>
+        You might have: <span style="color: coral;">{{prediction}}</span></h1>
+        <br>
+      <p class="lead">{{description}}</p>
       <hr class="my-4">
-      <h4 style="color: #444">Initial Prescription</h4>
-      <p class="lead" style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero officia, laborum optio expedita voluptate id quod temporibus nesciunt eveniet assumenda. Rem ducimus recusandae corporis vero voluptatem incidunt quae! Reiciendis, blanditiis.</p>
+      <h4 style="color: #444">Initial precautions that you need to follow:</h4>
+      <p class="lead" style="font-size: 18px;">{{precaution}}</p>
     </div>
 
     <div class="alert alert-warning" role="alert">
-      This is not a real prescription! Please visit your doctor.
+      This is a computer generated output and is only meant for references! Please visit your doctor before drawing any conclusions.
     </div>
   </div>
   <footer class="pt-5 pb-3">

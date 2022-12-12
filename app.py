@@ -4,6 +4,16 @@ from flask import (
 )
 import predengine
 
+import json
+with open('symptom_Description.txt') as f1:
+    s_d = f1.read()
+symptom_description=json.loads(s_d)
+
+with open('symptom_precaution.txt') as f2:
+    s_p = f2.read()
+symptom_precaution=json.loads(s_p)
+    
+
 from transcribingmedicalrecords import summarizer 
 app=Flask(__name__)
 
@@ -11,10 +21,8 @@ app=Flask(__name__)
 def index():
     if request.method=="POST":
 
-        # symptom1, symptom2, symptom3, symptom4, symptom5, symptom6=request.form['symptom1'], request.form['symptom2'], request.form['symptom3'], request.form['symptom4'], request.form['symptom5'], request.form['symptom6']
 
         symptoms_list=list(request.form.values())
-        # symptoms_list.append(symptom1)
         print(symptoms_list)
 
         symptoms_str = reduce(lambda a, b : a+ "," +str(b), symptoms_list)
@@ -25,7 +33,12 @@ def index():
         print(type(prediction))
 
         prediction_str=" ".join(prediction)
-        return render_template('index.html', prediction=prediction_str, symptom1=symptoms_list[0], symptom2=symptoms_list[1], symptom3=symptoms_list[2], symptom4=symptoms_list[3], symptom5=symptoms_list[4], symptom6=symptoms_list[5])
+        print()
+        
+        description= symptom_description[prediction_str]
+        precaution= symptom_precaution[prediction_str]
+
+        return render_template('index.html', prediction=prediction_str, description=description, precaution=precaution, symptom1=symptoms_list[0], symptom2=symptoms_list[1], symptom3=symptoms_list[2], symptom4=symptoms_list[3], symptom5=symptoms_list[4], symptom6=symptoms_list[5])
 
     return render_template('index.html')
 
