@@ -36,7 +36,8 @@
       <div class="row mb-2">
         <div class="form-group col-md-4">
           <h5>Symptom 1</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom1" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -178,7 +179,8 @@
         
         <div class="form-group col-md-4">
           <h5>Symptom 2</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom2" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -320,7 +322,8 @@
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 3</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom3" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -464,7 +467,8 @@
       <div class="row mb-2">
         <div class="form-group col-md-4">
           <h5>Symptom 4</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom4" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -606,7 +610,8 @@
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 5</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom5" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -748,7 +753,8 @@
         </div>
         <div class="form-group col-md-4">
           <h5>Symptom 6</h5>
-          <select class="selectpicker" data-live-search="true">
+          <select name="symptom6" class="selectpicker" data-live-search="true">
+            <option></option>
             <option>abdominal_pain</option>
             <option>abnormal_menstruation</option>
             <option>acidity</option>
@@ -892,21 +898,30 @@
       <input type="submit" class="btn btn-success" value="Predict my disease">
     </form>
 
-    <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
-      <h1 class="display-5" style="color: #444">Hello, you might have <span style="color: coral;">{{prediction}}</span></h1>
-      <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut rem ullam temporibus voluptate tenetur ea quas! Architecto animi molestias sint voluptates sunt voluptatibus delectus! Autem neque magnam quos possimus voluptates.</p>
-      <hr class="my-4">
-      <h4 style="color: #444">Initial Prescription</h4>
-      <p class="lead" style="font-size: 18px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero officia, laborum optio expedita voluptate id quod temporibus nesciunt eveniet assumenda. Rem ducimus recusandae corporis vero voluptatem incidunt quae! Reiciendis, blanditiis.</p>
-    </div>
+    {% if prediction %}
+      <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
+        <h1 class="display-5" style="color: #444">With the above symptoms, you might have: <span style="color: coral;">{{prediction}}</span></h1>
+          <br>
+        <p class="lead">{{description}}</p>
+        <hr class="my-4">
+        <h4 style="color: #444">Initial precautions that you need to follow:</h4>
+        <p class="lead" style="font-size: 18px;">
+          <ul>
+            {% for vals in precaution %}
+              <li style="font-size: 20px;">{{vals}}</li>
+            {% endfor %}  
+            </ul>
+        </p>
+      </div>
 
-    <div class="alert alert-warning" role="alert">
-      This is not a real prescription! Please visit your doctor.
-    </div>
+      <div class="alert alert-warning" role="alert">
+        This is a computer generated output and is only meant general references! Please visit your doctor before drawing any conclusions.
+      </div>
+      
+    {% endif %}
   </div>
-  <footer class="pt-5 pb-3">
-    <div class="container" style="text-align: center;">
-      Copyright &copy; webdoctor, 2022
+  <footer class="pt-7 pb-3">
+    <div class="container" style="text-align: center; margin-top: 90px;" >Copyright &copy; webdoctor, 2022
     </div>
   </footer>
 
