@@ -24,8 +24,9 @@ print(symptom_description["Allergy"])
 with open('symptom_precaution.txt') as f2:
     s_p = f2.read()
 symptom_precaution=json.loads(s_p)
-
+print(type(symptom_precaution["Allergy"]))
+print("-------------------")
 symptom_precaution=symptom_precaution["Allergy"]
 symptom_precaution=list(symptom_precaution.split(","))
-print(type(symptom_precaution["Allergy"]))
-print(symptom_precaution["Allergy"])
+print(type(symptom_precaution))
+print(symptom_precaution)

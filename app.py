@@ -35,8 +35,16 @@ def index():
         prediction_str=" ".join(prediction)
         print()
         
-        description= symptom_description[prediction_str]
-        precaution= symptom_precaution[prediction_str]
+        try:
+            description= symptom_description[prediction_str]
+        except:
+            description= "No description about the disease is found in the database. You may find more information on the web"
+        
+        try:
+            precaution= symptom_precaution[prediction_str]
+            precaution=list(precaution.split(","))
+        except:
+            precaution= "No precautions found at the moment. Kindly consult your doctor"
 
         return render_template('index.html', prediction=prediction_str, description=description, precaution=precaution, symptom1=symptoms_list[0], symptom2=symptoms_list[1], symptom3=symptoms_list[2], symptom4=symptoms_list[3], symptom5=symptoms_list[4], symptom6=symptoms_list[5])
 
