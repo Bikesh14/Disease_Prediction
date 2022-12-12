@@ -36,13 +36,14 @@ def index():
 def transcribe():
     string = ''
     keywords = list()
+    transcription=''
     if request.method == 'POST':
+        print('posted')
         transcription = request.form['transcription']
         keywords = summarizer(transcription)
-        print(keywords)
-        return render_template('summarizer.html', hello='world')
+        return render_template('summarizer.html', keywords = keywords, transcription= transcription)
 
-    return render_template('summarizer.html')
+    return render_template('summarizer.html', transcription= transcription)
 
 
 

@@ -44,27 +44,14 @@
     <form action="" method="POST">
       <div class="form-group" style="margin-top: 100px">
         <h5>Medical Transcription<h5>
-        <textarea placeholder="Enter Transcription" class="form-control" id="transcription" name="transcription" rows="8"
-          style="font-size: 18px"></textarea>
-        </textarea>
+        <textarea placeholder="Enter Transcription"  class="form-control"  minlength="100" id="transcription" name="transcription" rows="8"
+          style="font-size: 18px" required>{% if transcription!='' %}{{transcription}}{%endif%}</textarea>
       </div>
-      <input type="submit" class="btn btn-success my-4" value="Summarise" />
+      <input type="submit" class="btn btn-success my-4" value="Summarise"  />
     </form>
-    <div class="jumbotron my-5" style="background-color: rgb(246, 237, 225); margin-bottom: 16px !important; padding: 3rem 2rem;">
-      <h1 class="display-5 mb-4" style="color: #444">Symptoms and <span style="color: coral;">Keypoints</span></h1>
-      <ul style="font-size: 20px;">
-        <div class="row">
-          <div class="col-md-4">
-            <li>Lorem, ipsum dolor</li>
-          </div>
-          <div class="col-md-4">
-            <li>Lorem, ipsum dolor</li>
-          </div>
-          <div class="col-md-4">
-            <li>Lorem, ipsum dolor</li>
-          </div>
-        </div>
-      </ul>
+    <h5 class="mt-3">Symptoms and Keywords</h5>
+    <div class="jumbotron mb-5" style="background-color: rgb(246, 237, 225); font-weight: bold; margin-bottom: 16px !important; padding: 3rem 2rem;">
+      <p style="color: #444">{{keywords}}</span></p>
     </div>
   </div>
 
