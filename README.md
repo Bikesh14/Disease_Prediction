@@ -1,4 +1,4 @@
-## Disease Prediction AI Application
+## Disease Prediction AI Application: webdoctor
 
 This is a basic prototype application that uses AI to predict diseases based on symptoms. The application is built on the dataset "disease_prediction_dataset.csv". The user can input their symptoms and get a prediction of the most probable disease they might be suffering from.
 
